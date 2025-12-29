@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 4ede6d46786013b4b9fecee112301934
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - magicWandPrefab: {fileID: 6481964525557832643, guid: f327bef0cd73e594a8554950b06f6456, type: 3}
+  - sr: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
