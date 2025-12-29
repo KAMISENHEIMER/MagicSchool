@@ -385,6 +385,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5613277735943794824, guid: dd43dc138256cad419e093c1c42f8ca1, type: 3}
       insertIndex: -1
       addedObject: {fileID: 274401640}
+    - targetCorrespondingSourceObject: {fileID: 5613277735943794824, guid: dd43dc138256cad419e093c1c42f8ca1, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 274401643}
   m_SourcePrefab: {fileID: 100100000, guid: dd43dc138256cad419e093c1c42f8ca1, type: 3}
 --- !u!4 &274401638 stripped
 Transform:
@@ -409,6 +412,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLevitating: 0
+  bobSpeed: 2
+  bobHeight: 0.2
+  shadowPrefab: {fileID: 8886475045453652503, guid: 6c80b675d2cef534db9b479825af2271, type: 3}
+  shadowOffsetY: -0.3
+--- !u!114 &274401643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274401639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b33cd043315cae4399b7169b2487913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushTime: 0.5
+  testMove: 0
 --- !u!4 &345540642 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5169715309023490425, guid: c104245fcb8509b42a33d98a08fdcabb, type: 3}
@@ -6697,10 +6718,10 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
+    x: 0.0081883315
+    y: 0.009090909
+    width: 0.9825998
+    height: 0.9818182
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
