@@ -15,7 +15,10 @@ public class Levitate : MonoBehaviour, ICastable
 
     public float bobSpeed = 2f;
     public float bobHeight = 0.2f;
+    public float hoverOffset = 0.4f;
     private float startY;
+    public float lerpSpeed = 5f;
+    private float lerpPercent = 0f; //0 is ground, 1 is fully in the air
 
     public GameObject shadowPrefab; 
     public float shadowOffsetY = -0.3f; 
@@ -57,19 +60,25 @@ public class Levitate : MonoBehaviour, ICastable
 
     void Update()
     {
-        if (isLevitating)
-        {
-            //calculate the height offset
-            float newY = startY + Mathf.Sin((Time.time - startTime) * bobSpeed) * bobHeight + 0.3f;
-            //TODO SMOOTH UP START AND STOP
+        //this is always running, which isnt great
 
-            //apply to just the local Y axis
-            spriteTransform.localPosition = new Vector3(
-                spriteTransform.localPosition.x,
-                newY,
-                spriteTransform.localPosition.z
-            );
-        }
+        float targetDistance = isLevitating ? 1f : 0f;
+
+        //lerp to smoothly get to target distance
+        lerpPercent = Mathf.Lerp(lerpPercent, targetDistance, Time.deltaTime * lerpSpeed);
+
+        //bobbing value once fully levitating
+        float bobbingValue = Mathf.Sin(Time.time * bobSpeed) * bobHeight;
+        
+        //bobbing combined with lerped height
+        float newY = startY + (lerpPercent * (hoverOffset + bobbingValue));
+
+        spriteTransform.localPosition = new Vector3(
+            spriteTransform.localPosition.x,
+            newY,
+            spriteTransform.localPosition.z
+        );
+
     }
 
     public void ToggleMagic(Vector2 position)

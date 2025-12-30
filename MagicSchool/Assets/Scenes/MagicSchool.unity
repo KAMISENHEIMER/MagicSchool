@@ -414,6 +414,8 @@ MonoBehaviour:
   isLevitating: 0
   bobSpeed: 2
   bobHeight: 0.2
+  hoverOffset: 0.4
+  lerpSpeed: 5
   shadowPrefab: {fileID: 8886475045453652503, guid: 6c80b675d2cef534db9b479825af2271, type: 3}
   shadowOffsetY: -0.3
 --- !u!114 &274401643
